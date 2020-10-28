@@ -7,10 +7,7 @@ import { Link } from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import ChildCareTwoToneIcon from '@material-ui/icons/ChildCareTwoTone';
 import  Button  from '@material-ui/core/Button';
 
@@ -22,9 +19,6 @@ const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
     backgroundColor: 'secondary',
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
   },
   rightButton: {
     marginRight: '300px',
@@ -78,53 +72,22 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       display: 'flex',
     },
+    marginRight: 300,
   },
-  sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
-  },
+
 }));
 
 export default function Appbar() {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const isMenuOpen = Boolean(anchorEl);
-
-  const handleProfileMenuOpen = (event: any) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
-
-  const menuId = 'primary-search-account-menu';
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="fixed" color="transparent" >
+    <div className={classes.grow} >
+      <AppBar position="fixed" color="primary" >
         <Toolbar className={classes.height}>
+        
         <IconButton className={classes.title} aria-label="logo" color="inherit" component={Link} to="/">
-                < ChildCareTwoToneIcon/>
-            </IconButton>
+              < ChildCareTwoToneIcon/>
+          </IconButton>
           <Typography variant="h6" noWrap>
             돌다리
           </Typography>
@@ -145,29 +108,17 @@ export default function Appbar() {
           <div className={classes.sectionDesktop}>
           <Button component={Link} to="/books" >
               책방
-            </Button>
+          </Button>
             <Button component={Link} to="/rooms">
               방구하기
             </Button>
             <Button component={Link} to="/health_management">
               헬스장
             </Button>
-            <IconButton
-              className={classes.rightButton}
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
           </div>
 
         </Toolbar>
       </AppBar>
-      {renderMenu}
     </div>
   );
 }

@@ -17,16 +17,16 @@ function handleLoadingModeOff() {
 }
   return(
  
-  <div style={{width: '70%', margin: '30px auto'}}>
+  <div style={{width: '80%', margin: '20px auto'}}>
     <Button 
-      style={{marginLeft: 5, marginRight: 5}} 
+      style={{marginLeft: 20, marginRight: 5}} 
       variant="contained" 
       color="primary" 
       onClick={handleLoadingModeOff}
       > skeletonON 
     </Button>
     <Button
-      style={{marginLeft: 5, marginRight: 5}}  
+      style={{marginLeft: 10, marginRight: 5}}  
       variant="contained" 
       color="secondary" 
       onClick={handleLoadingModeOn}
