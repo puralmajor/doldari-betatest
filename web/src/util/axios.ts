@@ -5,4 +5,8 @@ const axiosInstance = axios.create({
   withCredentials: false,
 });
 
+<<<<<<< HEAD
 export default axiosInstance;
+=======
+export default axiosInstance;
+>>>>>>> dev
