@@ -2,12 +2,13 @@ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 //organisms
 //pages
+import Rooms from './pages/rooms/Rooms';
+import Main from './pages/main/Main';
+import Books from './pages/books/Books';
+import Detail from './pages/detail/Detail'
+import HealthManagement from './pages/healthMembership/HealthManagement';
 import {makeStyles,  createMuiTheme, ThemeProvider} from '@material-ui/core';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import Main from './pages/main/Main';
-import Rooms from './pages/rooms/Rooms';
-import Books from './pages/books/Books';
-import HealthManagement from './pages/healthMembership/HealthManagement';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,6 +59,7 @@ function App() {
           <Route exact path="/rooms" component={Rooms}/>
           <Route exact path="/books" component={Books}/>
           <Route exact path="/health_management" component={HealthManagement}/>
+          <Route exact path="/detail" component={Detail}/>
         </Switch>
       
       </BrowserRouter>

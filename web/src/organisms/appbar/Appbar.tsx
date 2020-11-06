@@ -1,17 +1,13 @@
-//외부 라이브러리에서 가져오는 모듈들
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Link } from 'react-router-dom';
-//Icons 
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
 import ChildCareTwoToneIcon from '@material-ui/icons/ChildCareTwoTone';
 import  Button  from '@material-ui/core/Button';
-
+import SimpleTabs from '../tab/Tab'
+import LongMenu from '../menu/Menu'
 
 const useStyles = makeStyles((theme) => ({
   height: {
@@ -19,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   grow: {
     flexGrow: 1,
-    backgroundColor: 'secondary',
+    backgroundColor: 'transparent',
   },
   rightButton: {
     marginRight: '300px',
@@ -82,43 +78,25 @@ export default function Appbar() {
   const classes = useStyles();
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="fixed" color="transparent" >
+    <div className={classes.grow} >
+      <AppBar position="fixed" color="primary" >
         <Toolbar className={classes.height}>
+        <LongMenu/>
         <IconButton className={classes.title} aria-label="logo" color="inherit" component={Link} to="/">
-                < ChildCareTwoToneIcon/>
-            </IconButton>
-          <Typography variant="h6" noWrap>
-            돌다리
-          </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="찾고싶은 물건을 검색하세요"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': '찾고싶은 물건을 검색하세요' }}
-            />
-          </div>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-          <Button component={Link} to="/books" >
-              책방
-            </Button>
-            <Button component={Link} to="/rooms">
-              방구하기
-            </Button>
-            <Button component={Link} to="/health_management">
-              헬스장
-            </Button>
-          </div>
+              < ChildCareTwoToneIcon/>
+          </IconButton>
+            <img src='https://ifh.cc/g/cdfnqb.png'></img>
 
+          <Button component={Link} to="/books" style={{marginLeft: 900}} >
+              로그인
+          </Button>
+            <Button component={Link} to="/rooms">
+              회원가입
+            </Button>
         </Toolbar>
       </AppBar>
+      <SimpleTabs/>
+
     </div>
   );
 }
