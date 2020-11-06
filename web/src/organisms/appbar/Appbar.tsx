@@ -3,6 +3,13 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
+import IconButton from '@material-ui/core/IconButton';
+import ChildCareTwoToneIcon from '@material-ui/icons/ChildCareTwoTone';
+import  Button  from '@material-ui/core/Button';
+import SimpleTabs from '../tab/Tab'
+import LongMenu from '../menu/Menu'
+=======
 //Icons
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
@@ -11,6 +18,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ChildCareTwoToneIcon from '@material-ui/icons/ChildCareTwoTone';
 import  Button  from '@material-ui/core/Button';
 
+>>>>>>> dev
 
 const useStyles = makeStyles((theme) => ({
   height: {
@@ -18,7 +26,11 @@ const useStyles = makeStyles((theme) => ({
   },
   grow: {
     flexGrow: 1,
+<<<<<<< HEAD
+    backgroundColor: 'transparent',
+=======
     backgroundColor: 'secondary',
+>>>>>>> dev
   },
   rightButton: {
     marginRight: '300px',
@@ -84,6 +96,27 @@ export default function Appbar() {
     <div className={classes.grow} >
       <AppBar position="fixed" color="primary" >
         <Toolbar className={classes.height}>
+<<<<<<< HEAD
+        <LongMenu/>
+        <IconButton className={classes.title} aria-label="logo" color="inherit" component={Link} to="/">
+              < ChildCareTwoToneIcon/>
+          </IconButton>
+            <img src='https://ifh.cc/g/cdfnqb.png'></img>
+
+          <Button component={Link} to="/books" style={{marginLeft: 900}} >
+              로그인
+          </Button>
+            <Button component={Link} to="/rooms">
+              회원가입
+            </Button>
+        </Toolbar>
+      </AppBar>
+      <SimpleTabs/>
+
+    </div>
+  );
+}
+=======
         
         <IconButton className={classes.title} aria-label="logo" color="inherit" component={Link} to="/">
               < ChildCareTwoToneIcon/>
@@ -122,3 +155,4 @@ export default function Appbar() {
     </div>
   );
 }
+>>>>>>> dev
